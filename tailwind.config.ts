@@ -12,7 +12,7 @@ const tailwid_config: Config = {
         'white': '#FFF'
       },
       backgroundImage: {
-        'banner-bg': "url(/images/"
+        'banner': "url('/images/banner-pic.png')"
       }
     }
   },
