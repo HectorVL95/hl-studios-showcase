@@ -44,7 +44,7 @@ const GallerySlider = () => {
 
   return (
     <SectionLayout>
-      <div>
+      <div className="flex flex-col gap-12">
         <Slider {...settings}>
           <div className="cursor-pointer">
             <Image 

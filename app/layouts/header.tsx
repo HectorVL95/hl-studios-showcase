@@ -1,12 +1,12 @@
+import Link from "next/link";
 import Image from "next/image"
 import Button from "../components/button"
-import Link from "next/link";
 import { IoMdMenu } from "react-icons/io";
-import { useMediaQuery } from "@mui/material";
+import { useResponsive } from "../hooks/useResponsive";
 
 const Header = () => { 
 
-  const is_mobile = useMediaQuery('(max-width: 640px)');
+  const { is_mobile } = useResponsive();
 
   return (
     <header className="flex justify-between items-center px-8 py-6">
