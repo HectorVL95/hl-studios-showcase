@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
+  //Continue on it
   
   return (
     <footer className="flex gap-8 py-24">
