@@ -3,13 +3,15 @@ import Image from "next/image"
 import Button from "../components/button"
 import { IoMdMenu } from "react-icons/io";
 import { useResponsive } from "../hooks/useResponsive";
+import { useRouter } from "next/navigation";
 
 const Header = () => { 
 
   const { is_mobile } = useResponsive();
+  const router = useRouter();
 
   return (
-    <header className="flex justify-between items-center px-8 py-6">
+    <header className="flex justify-between items-center lg:px-8 py-6">
     <div>
       {is_mobile ?  <Image src="/images/h&l-logo.png" width={140} height={140} alt="H&L Logo"/> : <Image src="/images/h&l-logo.png" width={260} height={260} alt="H&L Logo"/>}
     </div>
@@ -18,10 +20,10 @@ const Header = () => {
       <Link href="#" className="hover:underline">Home</Link>
       <Link href="#">Services</Link>
       <Link href="#">Portfolio</Link>
-
+      {is_mobile && <Link href="/contact">Contact</Link>}
     </div>}
     {is_mobile && <IoMdMenu className="w-8 h-8"/>}
-    { !is_mobile && <Button onClick={()=> {console.log('button clicked')}}>
+    { !is_mobile && <Button onClick={() => {router.push('contact')}}>
       Contact
     </Button>}
     </header>
