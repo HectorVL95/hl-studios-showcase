@@ -1,6 +1,8 @@
 'use client'
 
 import "./globals.css";
+import Header from "./layouts/header";
+import Footer from "./layouts/footer";
 
 const RootLayout = ({
   children,
@@ -10,7 +12,9 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body>
-        {children}
+        <Header/>
+          {children}
+        <Footer/>
       </body>
     </html>
   );

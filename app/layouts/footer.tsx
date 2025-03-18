@@ -40,7 +40,6 @@ const Footer = () => {
           <Link href="#">Home</Link>
           <Link href="#">Services</Link>
           <Link href="#">Portfolio</Link>
-          
         </div>
         <div className="flex gap-4">
           <FaFacebook className="h-8 w-8" />

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import SectionLayout from "../../section-layout";
+import TitlenSubtitle from "@/app/components/title";
 
 const About = () => {
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
-        <h3 className="text-6xl font-bold">About</h3>
+        <TitlenSubtitle title='About' />
         <div className="flex justify-center gap-48 items-center flex-col">
           <div className="flex flex-col md:flex-row gap-24 items-center">
             <Image src='/images/about-pic.png' width={530} height={300} alt="Self Shooting" className="rounded-[20px]"/>

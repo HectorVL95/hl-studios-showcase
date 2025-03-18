@@ -12,7 +12,6 @@ const Homepage = () => {
       <GallerySlider />
       <ServicesHomepage />
       <Banner  text='' img={'family-wedding-pic.png'}/>
-      
     </>
   );
 }

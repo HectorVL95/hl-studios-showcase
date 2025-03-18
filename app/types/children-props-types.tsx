@@ -6,3 +6,8 @@ export type BannerProps = {
   text: String
   img: String
 }
+
+export type TitleProps = {
+  title: String,
+  subtitle?: String
+}

@@ -1,7 +1,9 @@
-const Contact = () => {
+import Contact from "../layouts/contact/contact";
+
+const Page = () => {
   return (
-    <p>Contact</p> 
+    <Contact />
   );
 }
 
-export default Contact;
+export default Page;
