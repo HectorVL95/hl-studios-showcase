@@ -1,8 +1,8 @@
-import Services from "../layouts/services/services";
+import ServicesPage from "../layouts/services/services-page";
 
 const page = () => {
   return (
-    <Services />
+    <ServicesPage />
   );
 }
 
