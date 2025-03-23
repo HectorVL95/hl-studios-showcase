@@ -6,12 +6,12 @@ import ServicesHomepage from "./components/services-homepage";
 const Homepage = () => {
   return (
     <>
-      <Banner text={'Lets make your story unforgetable'} img={'banner-pic.png'} />
+      <Banner text={'Lets make your story unforgetable'} video="hHEn-1H3w4s" />
       <About />
-      <Banner text='' img={'girl-woods-pic.png'} />
+      <Banner img={'girl-woods-pic.png'} />
       <GallerySlider />
       <ServicesHomepage />
-      <Banner  text='' img={'family-wedding-pic.png'}/>
+      <Banner img={'family-wedding-pic.png'}/>
     </>
   );
 }

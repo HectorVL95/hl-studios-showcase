@@ -1,16 +1,16 @@
 'use client'
 
+import Link from "next/link";
 import Image from "next/image"
 import { useState } from "react";
+import { FaCircleCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ServiceProps } from "@/app/types/children-props-types";
-import { FaCircleCheck } from "react-icons/fa6";
-import Link from "next/link";
-
 
 const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
-
   const [accordion_open, set_accordion_open] = useState(false);
+
+  //Pending, must make it mobile friendly
 
   return (
     <div className="flex flex-col gap-8">
@@ -20,33 +20,33 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
           {service_card ? 
             <p className="text-7xl">{title}</p> 
               : 
-            <p className="text-7xl">For For any custom inquiries click <Link href={'/contact'}>Here</Link></p>
+            <p className="text-7xl">For any custom inquiries click <Link href={'/contact'}>Here</Link></p>
           }
         </div>
       </div>
-      <div>
+      <div className="">
         {
           accordion_open && 
           <div className="flex gap-8 justify-center items-start">
             {
               service_card && service_card.map((el, index) => 
-                <article key={index} className="flex flex-col gap-4 bg-[#282828] border p-[30px] w-[360px] border-none gap-4 rounded-[20px]">
+                <article key={index} className="flex flex-col gap-4 bg-[#282828] border p-[30px] min-w-[360px] max-w-[400px] border-none gap-4 rounded-[20px]">
                   <p className="text-2xl font-bold textn-center">{el.title}</p>
                   <h3 className="text-5xl font-bold text-center">
                     {el.price}
                   </h3>
                   <ul>
                     {el.services.map((li, indx) => (
-              
                       <li key={indx} className="flex items-center gap-4">
+                        <div>
                         <FaCircleCheck />
+                        </div>
                         <p className="text-[20px] font-bold">{li}</p>
                       </li>
                     ))}
                   </ul>
                 </article>
               )
-
             }
           </div>
         }

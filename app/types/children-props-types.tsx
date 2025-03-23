@@ -3,8 +3,9 @@ export type ChildrenProps = {
 }
 
 export type BannerProps = {
-  text: String
-  img: String
+  text?: String,
+  img?: String,
+  video?: string,
 }
 
 export type TitleProps = {

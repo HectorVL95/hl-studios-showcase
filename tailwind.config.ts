@@ -9,7 +9,8 @@ const tailwid_config: Config = {
       color: {
         'primary': '#1E1E1E',
         'secondary': '#282828',
-        'white': '#FFF'
+        'white': '#FFF',
+        'gray': '#D9D9D9'
       },
       backgroundImage: {
         'banner': "url('/images/banner-pic.png')"
