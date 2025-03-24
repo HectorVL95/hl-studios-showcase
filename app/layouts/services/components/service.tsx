@@ -10,15 +10,15 @@ import { ServiceProps } from "@/app/types/children-props-types";
 const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
   const [accordion_open, set_accordion_open] = useState(false);
 
-  //Pending, must make it mobile friendly
+  //Pending, must make an animation on close and open services details
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex gap-24">
+      <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-24">
         <Image src={img} width={540} height={540} alt="image"/>
-        <div className="flex items-center">
+        <div className="flex justify-center items-center">
           {service_card ? 
-            <p className="text-7xl">{title}</p> 
+            <p className="text-5xl lg:text-7xl">{title}</p> 
               : 
             <p className="text-7xl">For any custom inquiries click <Link href={'/contact'}>Here</Link></p>
           }
@@ -27,11 +27,11 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
       <div className="">
         {
           accordion_open && 
-          <div className="flex gap-8 justify-center items-start">
+          <div className="flex flex-wrap gap-8 justify-center items-start">
             {
               service_card && service_card.map((el, index) => 
                 <article key={index} className="flex flex-col gap-4 bg-[#282828] border p-[30px] min-w-[360px] max-w-[400px] border-none gap-4 rounded-[20px]">
-                  <p className="text-2xl font-bold textn-center">{el.title}</p>
+                  <p className="text-2xl font-bold text-center">{el.title}</p>
                   <h3 className="text-5xl font-bold text-center">
                     {el.price}
                   </h3>

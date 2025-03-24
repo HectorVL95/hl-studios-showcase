@@ -1,18 +1,32 @@
 'use client'
 
 import "./globals.css";
+import { useState, useEffect } from "react";
 import Header from "./layouts/header";
 import Footer from "./layouts/footer";
+import MobileNav from "./layouts/mobile-nav";
+import { useResponsive } from "./hooks/useResponsive";
 
 const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
+
+  const [header_nav, set_header_nav] = useState(false);
+  const { is_mobile } = useResponsive();
+
+  useEffect(() => {
+    if (!is_mobile) {
+      set_header_nav(false)
+    }
+  }, [is_mobile])
+
   return (
     <html lang="en">
       <body>
-        <Header/>
+        <Header header_nav={header_nav} set_header_nav={set_header_nav}/>
+        { is_mobile && header_nav === true && <MobileNav />}
           {children}
         <Footer/>
       </body>
@@ -20,4 +34,4 @@ const RootLayout = ({
   );
 }
 
-export default RootLayout
+export default RootLayout;
