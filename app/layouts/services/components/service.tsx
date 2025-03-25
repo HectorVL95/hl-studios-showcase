@@ -6,11 +6,12 @@ import { useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ServiceProps } from "@/app/types/children-props-types";
+import { motion } from "framer-motion"
+import { useResponsive } from "@/app/hooks/useResponsive";
 
 const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
   const [accordion_open, set_accordion_open] = useState(false);
-
-  //Pending, must make an animation on close and open services details
+  const { is_mobile } = useResponsive();
 
   return (
     <div className="flex flex-col gap-8">
@@ -20,13 +21,17 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
           {service_card ? 
             <p className="text-5xl lg:text-7xl">{title}</p> 
               : 
-            <p className="text-7xl">For any custom inquiries click <Link href={'/contact'}>Here</Link></p>
+            <p className="text-7xl">For any custom inquiries {is_mobile ? 'tap' : 'click'} <Link href={'/contact'} className="underline">here</Link></p>
           }
         </div>
       </div>
-      <div className="">
-        {
-          accordion_open && 
+      <div>
+        <motion.div
+          initial={{height: 0, opacity: 0}}
+          animate={{height: accordion_open ? 'auto' : 0, opacity: accordion_open ? 1 : 0}}
+          transition={{duration: 0.3, ease: 'easeInOut'}}
+          className="overflow-hidden"
+        >
           <div className="flex flex-wrap gap-8 justify-center items-start">
             {
               service_card && service_card.map((el, index) => 
@@ -49,7 +54,7 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
               )
             }
           </div>
-        }
+        </motion.div>
        {service_card && <div className="flex gap-4 items-center">
           <div className="border-b-white border-b-[2px] w-full"></div>
           {

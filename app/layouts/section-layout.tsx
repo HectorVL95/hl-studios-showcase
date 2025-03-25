@@ -1,4 +1,5 @@
 import { ChildrenProps } from "../types/children-props-types";
+import tailwid_config from "@/tailwind.config";
 
 const SectionLayout: React.FC<ChildrenProps> = ({ children }) => {
 

@@ -6,6 +6,7 @@ export type BannerProps = {
   text?: String,
   img?: String,
   video?: string,
+  animated?: boolean
 }
 
 export type TitleProps = {

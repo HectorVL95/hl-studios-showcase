@@ -2,7 +2,9 @@ import type {Config} from 'tailwindcss'
 
 const tailwid_config: Config = {
   content: [
-    './app'
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -10,7 +12,7 @@ const tailwid_config: Config = {
         'primary': '#1E1E1E',
         'secondary': '#282828',
         'white': '#FFF',
-        'gray': '#D9D9D9'
+        'gray': '#808080'
       },
       backgroundImage: {
         'banner': "url('/images/banner-pic.png')"

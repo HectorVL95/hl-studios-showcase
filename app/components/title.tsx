@@ -1,9 +1,10 @@
 import { TitleProps } from "../types/children-props-types";
+import SectionLayout from "../layouts/section-layout";
 
 const TitlenSubtitle: React.FC<TitleProps> = ({ title, subtitle }) => {
   return (
     <>
-    <h3 className="text-6xl">{title}</h3>
+    <h3 className="mt-8 text-6xl">{title}</h3>
     { 
       subtitle && <p className="text-[32px] align-middle">{subtitle}</p>
     }

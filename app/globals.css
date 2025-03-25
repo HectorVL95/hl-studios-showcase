@@ -18,9 +18,9 @@ body {
   box-sizing: border-box;
 }
 
-.slick-list {
- margin: -24px 0;
-}
-.slick-slide {
-  margin: 24px 0;
+@media (min-width:768px) {
+  .slick-slide {
+    margin: 0 10px;
+  }
+  
 }

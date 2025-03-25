@@ -1,10 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
-import SectionLayout from "../../section-layout";
+import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
+import SectionLayout from "../../section-layout";
 
 const GallerySlider = () => {
+
+  const router = useRouter()
 
   const settings = {
     dots: false,
@@ -102,7 +105,7 @@ const GallerySlider = () => {
         </Slider>
         <div className="flex justify-end">
           <div>
-            <Button>View More</Button>
+            <Button onClick={() => { router.push('/portfolio')}}>View More</Button>
           </div>
         </div>
       </div>

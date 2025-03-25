@@ -8,7 +8,7 @@ const About = () => {
       <div className="flex flex-col gap-12">
         <TitlenSubtitle title='About' />
         <div className="flex justify-center gap-48 items-center flex-col">
-          <div className="flex flex-col md:flex-row gap-24 items-center">
+          <div className="flex flex-col lg:flex-row gap-24 items-center">
             <Image src='/images/about-pic.png' width={530} height={300} alt="Self Shooting" className="rounded-[20px]"/>
             <div>
               <p className="text-[32px] align-middle">
