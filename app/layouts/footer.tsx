@@ -5,7 +5,6 @@ import Button from "../components/button";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
-  
   return (
     <footer className="flex flex-col lg:flex-row justify-between items-center gap-8 py-24 px-8">
       <form className="flex flex-col gap-8">
@@ -37,9 +36,9 @@ const Footer = () => {
           <Image src="/images/h&l-logo.png" width={260} height={260} alt="H&L Logo"/>
         </div>
         <div className="flex gap-8">
-          <Link href="#">Home</Link>
+          <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
-          <Link href="#">Portfolio</Link>
+          <Link href="/portfolio">Portfolio</Link>
         </div>
         <div className="flex gap-4">
           <FaFacebook className="h-8 w-8" />

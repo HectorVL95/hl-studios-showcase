@@ -21,13 +21,16 @@ type ServiceCardType = {
 };
 
 export type ServiceProps = {
+  id_tag: string,
   img: string, 
   title: String, 
-  service_card?: ServiceCardType[]
+  service_card?: ServiceCardType[],
+  selected_service: boolean,
 }
 
 export type ServiceDataTypes = {
-  id: number ;
+  id: number;
+  id_tag: string;
   img: string
   title?: string;
   services_card?: ServiceCardType[];

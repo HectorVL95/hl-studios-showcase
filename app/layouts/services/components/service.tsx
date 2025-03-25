@@ -2,19 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ServiceProps } from "@/app/types/children-props-types";
 import { motion } from "framer-motion"
 import { useResponsive } from "@/app/hooks/useResponsive";
 
-const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
-  const [accordion_open, set_accordion_open] = useState(false);
+const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_service, id_tag }) => {
+  const [accordion_open, set_accordion_open] = useState(selected_service || false);
   const { is_mobile } = useResponsive();
 
+  useEffect(() => {
+    if(selected_service) {
+      set_accordion_open(true)
+    }
+  }, [selected_service])
+
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8" id={id_tag}>
       <div className="flex flex-col-reverse md:flex-row gap-12 lg:gap-24">
         <Image src={img} width={540} height={540} alt="image"/>
         <div className="flex justify-center items-center">
@@ -59,9 +65,9 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card }) => {
           <div className="border-b-white border-b-[2px] w-full"></div>
           {
             accordion_open ? 
-              <FaChevronUp className="w-8 h-8" onClick={() => set_accordion_open(false)} /> 
+              <FaChevronUp className="w-8 h-8 cursor-pointer" onClick={() => set_accordion_open(false)} /> 
             : 
-              <FaChevronDown className="w-8 h-8" onClick={() => set_accordion_open(true)}/>
+              <FaChevronDown className="w-8 h-8 cursor-pointer" onClick={() => set_accordion_open(true)}/>
           }
         </div>}
       </div>

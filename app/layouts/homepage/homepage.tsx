@@ -3,7 +3,6 @@ import About from "./components/about";
 import GallerySlider from "./components/slider";
 import ServicesHomepage from "./components/services-homepage";
 import { useEffect, useState } from "react";
-import { clearInterval } from "timers";
 
 const Homepage = () => {
   const [count, set_count] = useState(0);
@@ -24,20 +23,16 @@ const Homepage = () => {
 
   useEffect(() => {
     const counting = setInterval(() => set_count((prev) => prev >= 2 ? 0 : prev + 1), 2000)
-    return () => {
-      clearInterval(counting)
-    }
+    
+    return () => clearInterval(counting)  
   }, [])
 
 
 //Work to better up the animation
   useEffect(() => {
-    // set_animated(true)
+    set_animated(true)
     shown_image_fn();
-    const timeout =
-    setTimeout(() => {
-      set_animated(false)
-    }, 1000)
+    const timeout = setTimeout(() => {set_animated(false)}, 1000)
     
     return () => clearTimeout(timeout)
   }, [count])

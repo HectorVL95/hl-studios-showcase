@@ -6,6 +6,7 @@ const services_data: ServiceDataTypes[] = [
     id: 0,
     img: '/images/service-wedding.png',
     title: 'Weddings',
+    id_tag:'wed',
     services_card: [
       {
         title:'Silver wedding collection',
@@ -59,6 +60,7 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 1,
+    id_tag:'xv',
     img: '/images/service-xvs.png',
     title: 'XVs Celebrations',
     services_card: [
@@ -114,8 +116,9 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 2,
+    id_tag:'bd',
     img: '/images/service-bd.png',
-    title: 'Brithday Celebrations',
+    title: 'Birthday Celebrations',
     services_card: [
       {
         title:'Silver birthday Collection',
@@ -157,6 +160,7 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 3,
+    id_tag:'mat',
     img: '/images/service-maternity.png',
     title: 'Maternity',
     services_card: [
@@ -190,6 +194,7 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 4,
+    id_tag:'comm',
     img: '/images/service-commercial.png',
     title: 'Commercial Shoots',
     services_card: [
@@ -232,6 +237,7 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 5,
+    id_tag: 'custom',
     img: '/images/service-custom.png',
   },
 ]
