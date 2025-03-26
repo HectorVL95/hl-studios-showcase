@@ -5,8 +5,6 @@ import SectionLayout from "../../section-layout";
 const ServicesHomepage = () => {
   const router = useRouter();
 
-  //Pending working on click that opens up service with accordion open
-
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">

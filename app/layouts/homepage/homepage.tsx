@@ -3,13 +3,16 @@ import About from "./components/about";
 import GallerySlider from "./components/slider";
 import ServicesHomepage from "./components/services-homepage";
 import { useEffect, useState } from "react";
+import SliderBigPic from "./components/slider-big-pic";
 
 const Homepage = () => {
   const [count, set_count] = useState(0);
   const [shown_image, set_shown_image] = useState('');
   const [animated, set_animated] = useState(false);
+  const [show_slider_big_pic, set_show_slider_big_pic] = useState(false)
 
   //Pending
+  
 
   const shown_image_fn = () => {
     if (count === 0) {
@@ -41,7 +44,8 @@ const Homepage = () => {
       <Banner text={'Lets make your story unforgetable'} video="hHEn-1H3w4s" />
       <About />
       <Banner text='' animated={animated} img={shown_image} />
-      <GallerySlider />
+      {show_slider_big_pic && <SliderBigPic  set_show_slider_big_pic={set_show_slider_big_pic}/>}
+      <GallerySlider set_show_slider_big_pic={set_show_slider_big_pic}/>
       <ServicesHomepage />
       <Banner text='' img={'family-wedding-pic.png'}/>
     </>

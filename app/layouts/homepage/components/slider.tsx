@@ -5,8 +5,11 @@ import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
 
-const GallerySlider = () => {
+type GallerySliderProps  = {
+  set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
+}
 
+const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic }) => {
   const router = useRouter()
 
   const settings = {
@@ -49,7 +52,7 @@ const GallerySlider = () => {
     <SectionLayout>
       <div className="flex flex-col gap-12">
         <Slider {...settings}>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
             <Image 
               src='/images/gallery-slider-couple.png' 
               width={350} 
@@ -57,8 +60,7 @@ const GallerySlider = () => {
               alt="gallery slider image"
             />
           </div>
-
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
             <Image 
               src='/images/gallery-slider-couple2.png' 
               width={350} 
@@ -66,8 +68,7 @@ const GallerySlider = () => {
               alt="gallery slider image"         
             />
           </div>
-
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
             <Image 
               src='/images/gallery-slider-girl.png' 
               width={350} 
@@ -75,8 +76,7 @@ const GallerySlider = () => {
               alt="gallery slider image"   
             />
           </div>
-
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
             <Image 
               src='/images/gallery-slider-girl2.png' 
               width={350} 
@@ -84,17 +84,7 @@ const GallerySlider = () => {
               alt="gallery slider image"
             />
           </div>
-
-          <div className="cursor-pointer">
-            <Image 
-              src='/images/gallery-slider-pregnant.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"
-            />
-          </div>
-
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
             <Image 
               src='/images/gallery-slider-pregnant.png' 
               width={350} 
