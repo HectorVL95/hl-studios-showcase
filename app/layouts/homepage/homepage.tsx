@@ -27,16 +27,14 @@ const Homepage = () => {
     return () => clearInterval(counting)  
   }, [])
 
-
 //Work to better up the animation
   useEffect(() => {
-    set_animated(true)
+    // set_animated(true)
     shown_image_fn();
     const timeout = setTimeout(() => {set_animated(false)}, 1000)
     
     return () => clearTimeout(timeout)
   }, [count])
-
 
   return (
     <>
