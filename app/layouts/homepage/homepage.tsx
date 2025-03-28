@@ -10,6 +10,9 @@ const Homepage = () => {
   const [shown_image, set_shown_image] = useState('');
   const [animated, set_animated] = useState(false);
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false)
+  const [selected_image_index, set_selected_image_index] = useState<number | null>(null)
+
+  console.log(selected_image_index)
 
   //Pending
   
@@ -44,10 +47,19 @@ const Homepage = () => {
       <Banner text={'Lets make your story unforgetable'} video="hHEn-1H3w4s" />
       <About />
       <Banner text='' animated={animated} img={shown_image} />
-      {show_slider_big_pic && <SliderBigPic  set_show_slider_big_pic={set_show_slider_big_pic}/>}
-      <GallerySlider set_show_slider_big_pic={set_show_slider_big_pic}/>
+      {show_slider_big_pic && 
+        <SliderBigPic  
+          set_show_slider_big_pic={set_show_slider_big_pic}
+          selected_image_index={selected_image_index}
+          set_selected_image_index={set_selected_image_index}
+        />
+      }
+      <GallerySlider 
+      set_show_slider_big_pic={set_show_slider_big_pic} 
+      set_selected_image_index={set_selected_image_index}
+      />
       <ServicesHomepage />
-      <Banner text='' img={'family-wedding-pic.png'}/>
+      <Banner text='' img={'family-wedding-pic.png'} />
     </>
   );
 }

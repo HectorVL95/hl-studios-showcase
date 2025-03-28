@@ -4,12 +4,15 @@ import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
+import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
+import { motion } from "framer-motion";
 
 type GallerySliderProps  = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
+  set_selected_image_index: React.Dispatch <React.SetStateAction<null | number>>
 }
 
-const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic }) => {
+const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, set_selected_image_index }) => {
   const router = useRouter()
 
   const settings = {
@@ -19,7 +22,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic }
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: false,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -51,47 +54,22 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic }
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
-        <Slider {...settings}>
-          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
-            <Image 
-              src='/images/gallery-slider-couple.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"
-            />
-          </div>
-          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
-            <Image 
-              src='/images/gallery-slider-couple2.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"         
-            />
-          </div>
-          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
-            <Image 
-              src='/images/gallery-slider-girl.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"   
-            />
-          </div>
-          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
-            <Image 
-              src='/images/gallery-slider-girl2.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"
-            />
-          </div>
-          <div className="cursor-pointer" onClick={() => set_show_slider_big_pic(true)}>
-            <Image 
-              src='/images/gallery-slider-pregnant.png' 
-              width={350} 
-              height={300} 
-              alt="gallery slider image"
-            />
-          </div>
+        <Slider {...settings}>   
+          {GallerySliderPictures.map((el) => 
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div key={el.id} className="cursor-pointer py-4" onClick={() => {set_show_slider_big_pic(true); set_selected_image_index(el.id);}}>
+                <Image 
+                  src={el.src} 
+                  width={350} 
+                  height={300} 
+                  alt="gallery slider image"
+                />
+              </div>
+            </motion.button>
+          )}
         </Slider>
         <div className="flex justify-end">
           <div>

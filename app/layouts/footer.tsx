@@ -2,22 +2,34 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
+import { useRouter } from "next/navigation";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
+  const path = useRouter();
+
+  const handle_message_send = () => {
+    path.push('/contact')
+    
+  }
+
   return (
     <footer className="flex flex-col lg:flex-row justify-between items-center gap-8 py-24 px-8">
-      <form className="flex flex-col gap-8">
-        <input 
-          placeholder="Email"
-          style={{backgroundColor: "#282828", padding: '10px', width: '80%', maxWidth: '320px'}}
-        />
-        <input 
-          placeholder="Message"
-          style={{backgroundColor: "#282828", padding: '10px', width: '100%', height: '100px', maxWidth: '320px'}}
-        />
+      <form className="flex flex-col gap-4">
+        <div className="flex flex-col">
+          <label>Email</label>
+          <input 
+            style={{backgroundColor: "#282828", padding: '10px', maxWidth: '320px'}}
+          />
+        </div>
+        <div className="flex flex-col">
+          <label>Message</label>
+          <input 
+            style={{backgroundColor: "#282828", padding: '10px', width: '100%', height: '100px', maxWidth: '320px'}}
+          />
+        </div>
         <div className="flex justify-end">
-          <Button pill>
+          <Button onClick={handle_message_send} pill>
             send
           </Button>
         </div>
@@ -41,9 +53,12 @@ const Footer = () => {
           <Link href="/portfolio">Portfolio</Link>
         </div>
         <div className="flex gap-4">
-          <FaFacebook className="h-8 w-8" />
-          <FaInstagram className="h-8 w-8" />
-          <FaLinkedin className="h-8 w-8" />
+          <Link href="https://www.instagram.com/hlstudiosmx/">
+            <FaFacebook  className="h-16 w-16" />
+          </Link>
+          <Link href="https://www.facebook.com/hlstudiosmx">
+            <FaInstagram className="h-16 w-16" />
+          </Link>
         </div>
         <div>
           <p>&copy; {new Date().getFullYear()} H&L Studios. All rights reserved.</p>

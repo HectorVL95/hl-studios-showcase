@@ -4,86 +4,60 @@ import Button from "@/app/components/button";
 import { useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import React from "react";
+import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
+import { motion } from "framer-motion"
+
 
 type SliderBigPicProps = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
+  selected_image_index: null | number
+  set_selected_image_index: React.Dispatch<React.SetStateAction<null | number>>
 }
 
 //Pending
 
-const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic }) => {
+const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, selected_image_index, set_selected_image_index }) => {
   const path = useRouter();
 
   var settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow:   1,
     slidesToScroll: 1,
+    initialSlide: selected_image_index | 0,
   };
   return (
-    <div className="fixed top-0 bottom-0 left-0 right-0 absolute w-full h-full z-11 bg-[#282828]">
-      <div className="flex flex-col">
+    <motion.div 
+      className="flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 absolute w-full h-full z-11 bg-[#282828] opacity-25"
+      initial={{opacity: 0, scale: 0.8}}
+      animate={{opacity: 1, scale: 1}}
+      exit={{opacity: 0, scale:0.8}}
+      transition={{duration: 0.3, ease: 'easeInOut'}}
+    >
+      <div className="flex justify-center flex-col gap-8 max-w-[768px]">
         <div className="flex justify-end">
-          <IoMdClose className="cursor-pointer" onClick={() => set_show_slider_big_pic(false)}/>
+          <IoMdClose className="cursor-pointer w-8 h-8" onClick={() => {set_show_slider_big_pic(false); set_selected_image_index(null)} }/>
         </div>
         <div>
           <Slider {...settings}>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-couple.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-couple2.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"         
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-girl.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"   
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-girl2.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-pregnant.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Image 
-                src='/images/gallery-slider-pregnant.png' 
-                width={350} 
-                height={300} 
-                alt="gallery slider image"
-              />
-            </div>
+            {GallerySliderPictures.map(el => 
+              <div key={el.id} className="cursor-pointer">
+                <Image 
+                  src={el.src} 
+                  width={760} 
+                  height={600} 
+                  alt="gallery slider image"
+                />
+              </div>
+            )}
           </Slider>
-          <div>
+        </div>
+          <div className="flex justify-center items-center">
             <Button onClick={() => {path.push('/portfolio')}}>View More</Button>
           </div>
-        </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

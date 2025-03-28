@@ -50,7 +50,7 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_se
                     {el.services.map((li, indx) => (
                       <li key={indx} className="flex items-center gap-4">
                         <div>
-                        <FaCircleCheck />
+                          <FaCircleCheck />
                         </div>
                         <p className="text-[20px] font-bold">{li}</p>
                       </li>
