@@ -53,10 +53,10 @@ const Footer = () => {
           <Link href="/portfolio">Portfolio</Link>
         </div>
         <div className="flex gap-4">
-          <Link href="https://www.instagram.com/hlstudiosmx/">
+          <Link href="https://www.facebook.com/hlstudiosmx">
             <FaFacebook  className="h-16 w-16" />
           </Link>
-          <Link href="https://www.facebook.com/hlstudiosmx">
+          <Link href="https://www.instagram.com/hlstudiosmx/">
             <FaInstagram className="h-16 w-16" />
           </Link>
         </div>

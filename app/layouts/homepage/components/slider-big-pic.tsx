@@ -29,7 +29,8 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
   };
   return (
     <motion.div 
-      className="flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 absolute w-full h-full z-11 bg-[#282828] opacity-25"
+      className="flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 absolute w-full h-full z-11"
+      style={{ backgroundColor: "rgba(40, 40, 40, .90)" }} 
       initial={{opacity: 0, scale: 0.8}}
       animate={{opacity: 1, scale: 1}}
       exit={{opacity: 0, scale:0.8}}

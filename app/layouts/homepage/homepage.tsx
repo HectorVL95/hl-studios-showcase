@@ -4,15 +4,15 @@ import GallerySlider from "./components/slider";
 import ServicesHomepage from "./components/services-homepage";
 import { useEffect, useState } from "react";
 import SliderBigPic from "./components/slider-big-pic";
+import { useResponsive } from "@/app/hooks/useResponsive";
 
 const Homepage = () => {
+  const { is_mobile } = useResponsive();
   const [count, set_count] = useState(0);
   const [shown_image, set_shown_image] = useState('');
   const [animated, set_animated] = useState(false);
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false)
   const [selected_image_index, set_selected_image_index] = useState<number | null>(null)
-
-  console.log(selected_image_index)
 
   //Pending
   
@@ -31,7 +31,13 @@ const Homepage = () => {
     const counting = setInterval(() => set_count((prev) => prev >= 2 ? 0 : prev + 1), 2000)
     
     return () => clearInterval(counting)  
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    if (is_mobile) {
+      set_show_slider_big_pic(false)
+    }
+  }, [is_mobile])
 
 //Work to better up the animation
   useEffect(() => {

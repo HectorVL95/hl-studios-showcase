@@ -6,6 +6,7 @@ import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
 import { motion } from "framer-motion";
+import { useResponsive } from "@/app/hooks/useResponsive";
 
 type GallerySliderProps  = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
@@ -14,6 +15,7 @@ type GallerySliderProps  = {
 
 const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, set_selected_image_index }) => {
   const router = useRouter()
+  const { is_mobile } = useResponsive();
 
   const settings = {
     dots: false,
@@ -51,6 +53,11 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     ]
   };
 
+  const handle_show_slider_big_pic = () => {
+    if (is_mobile) return;
+    set_show_slider_big_pic(true)
+  }
+
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
@@ -60,7 +67,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div key={el.id} className="cursor-pointer py-4" onClick={() => {set_show_slider_big_pic(true); set_selected_image_index(el.id);}}>
+              <div key={el.id} className="cursor-pointer py-4" onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}>
                 <Image 
                   src={el.src} 
                   width={350} 
