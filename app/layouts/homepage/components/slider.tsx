@@ -64,10 +64,11 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
         <Slider {...settings}>   
           {GallerySliderPictures.map((el) => 
             <motion.button
+              key={el.id}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div key={el.id} className="cursor-pointer py-4" onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}>
+              <div className="cursor-pointer py-4" onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}>
                 <Image 
                   src={el.src} 
                   width={350} 

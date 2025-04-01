@@ -1,15 +1,15 @@
  'use client'
 
+ import Link from "next/link";
+ import { useState } from "react";
+ import { motion } from "framer-motion"
+ import { MdEmail } from "react-icons/md";
+ import { useRouter } from "next/navigation";
+ import Button from "@/app/components/button";
  import SectionLayout from "../section-layout";
-import { FaMessage, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import TitlenSubtitle from "@/app/components/title";
-import Button from "@/app/components/button";
-import { useState } from "react";
-import { FaCircleCheck } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion"
-import Link from "next/link";
+ import { FaCircleCheck } from "react-icons/fa6";
+ import TitlenSubtitle from "@/app/components/title";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
   

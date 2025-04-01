@@ -1,5 +1,4 @@
 import { ServiceDataTypes } from "../types/children-props-types"
-import Link from "next/link"
 
 const services_data: ServiceDataTypes[] = [
   {

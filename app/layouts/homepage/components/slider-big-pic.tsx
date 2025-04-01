@@ -19,7 +19,7 @@ type SliderBigPicProps = {
 const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, selected_image_index, set_selected_image_index }) => {
   const path = useRouter();
 
-  var settings = {
+  const settings = {
     dots: false,
     infinite: false,
     speed: 500,

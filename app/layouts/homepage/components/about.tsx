@@ -12,7 +12,7 @@ const About = () => {
             <Image src='/images/about-pic.png' width={530} height={300} alt="Self Shooting" className="rounded-[20px]"/>
             <div>
               <p className="text-[32px] align-middle">
-                Welcome to H&L STUDIOS, a creative studio dedicated to capturing life's most precious moments. With a passion for storytelling and a keen eye for detail, we aim to deliver exceptional Photography & Videography services that exceed your expectations.
+                Welcome to H&L STUDIOS, a creative studio dedicated to capturing life&apos;s most precious moments. With a passion for storytelling and a keen eye for detail, we aim to deliver exceptional Photography & Videography services that exceed your expectations.
               </p>
             </div>
           </div>

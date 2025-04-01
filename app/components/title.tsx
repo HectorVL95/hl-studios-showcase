@@ -1,5 +1,4 @@
 import { TitleProps } from "../types/children-props-types";
-import SectionLayout from "../layouts/section-layout";
 
 const TitlenSubtitle: React.FC<TitleProps> = ({ title, subtitle }) => {
   return (

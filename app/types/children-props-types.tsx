@@ -3,15 +3,15 @@ export type ChildrenProps = {
 }
 
 export type BannerProps = {
-  text?: String,
-  img?: String,
+  text?: string,
+  img?: string,
   video?: string,
   animated?: boolean
 }
 
 export type TitleProps = {
-  title: String,
-  subtitle?: String
+  title: string,
+  subtitle?: string
 }
 
 type ServiceCardType = {
@@ -23,7 +23,7 @@ type ServiceCardType = {
 export type ServiceProps = {
   id_tag: string,
   img: string, 
-  title: String, 
+  title: string, 
   service_card?: ServiceCardType[],
   selected_service: boolean,
 }

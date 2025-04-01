@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
 import { useRouter } from "next/navigation";
-import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   const path = useRouter();
