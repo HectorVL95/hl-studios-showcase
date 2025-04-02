@@ -3,7 +3,7 @@ import About from "./components/about";
 import GallerySlider from "./components/slider";
 import ServicesHomepage from "./components/services-homepage";
 import { useEffect, useState } from "react";
-import SliderBigPic from "./components/slider-big-pic";
+import SliderBigPic from "../../components/slider-big-pic";
 import { useResponsive } from "@/app/hooks/useResponsive";
 
 const Homepage = () => {

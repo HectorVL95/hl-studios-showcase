@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ServiceProps } from "@/app/types/children-props-types";
-import { motion } from "framer-motion"
+import { motion } from "motion/react";
 import { useResponsive } from "@/app/hooks/useResponsive";
 
 const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_service, id_tag }) => {

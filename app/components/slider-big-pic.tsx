@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import React from "react";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
+import { usePathname } from "next/navigation";
+import portfolioPictures from "../data/portfolio-pictures";
 
 
 type SliderBigPicProps = {
@@ -17,7 +19,7 @@ type SliderBigPicProps = {
 //Pending
 
 const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, selected_image_index, set_selected_image_index }) => {
-  const path = useRouter();
+  const path = usePathname();
 
   const settings = {
     dots: false,
@@ -52,6 +54,7 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
                 />
               </div>
             )}
+            
           </Slider>
         </div>
           <div className="flex justify-center items-center">

@@ -8,7 +8,7 @@ const ServicesHomepage = () => {
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
-        <h3 className="text-6xl font-bold">Services</h3>
+        <h3 className="text-6xl">Services</h3>
         <div className="flex flex-col gap-8">
           <div className="flex flex-wrap gap-8 justify-center items-center">
             <Button onClick={() => router.push('/services?service=Weddings#wed')} pill>

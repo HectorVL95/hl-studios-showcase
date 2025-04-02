@@ -2,7 +2,7 @@
 
  import Link from "next/link";
  import { useState } from "react";
- import { motion } from "framer-motion"
+ import { motion } from "motion/react"
  import { MdEmail } from "react-icons/md";
  import { useRouter } from "next/navigation";
  import Button from "@/app/components/button";

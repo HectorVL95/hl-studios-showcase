@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useResponsive } from "@/app/hooks/useResponsive";
 
 type GallerySliderProps  = {
@@ -57,6 +57,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     if (is_mobile) return;
     set_show_slider_big_pic(true)
   }
+
+  //Pending on it
 
   return (
     <SectionLayout>
