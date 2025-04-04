@@ -64,27 +64,20 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     <SectionLayout>
       <div className="flex flex-col gap-12">
         <Slider {...settings}>   
-          {GallerySliderPictures.map((el) => 
-            <motion.button
-              key={el.id}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="cursor-pointer py-4" onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}>
-                <Image 
-                  src={el.src} 
-                  width={350} 
-                  height={300} 
-                  alt="gallery slider image"
-                />
-              </div>
-            </motion.button>
+          {
+            GallerySliderPictures.map(el => 
+              <Image 
+                src={el.src} 
+                width={350} 
+                height={300} 
+                alt="gallery slider image"
+                className="cursor-pointer py-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95" 
+                onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}
+              />
           )}
         </Slider>
-        <div className="flex justify-end">
-          <div>
-            <Button onClick={() => { router.push('/portfolio')}}>View More</Button>
-          </div>
+        <div className="flex justify-center lg:justify-end">
+          <Button onClick={() => { router.push('/portfolio')}}>View More</Button>
         </div>
       </div>
     </SectionLayout>

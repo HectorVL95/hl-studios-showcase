@@ -1,7 +1,6 @@
 import Slider from "react-slick";
 import Image from "next/image";
 import Button from "@/app/components/button";
-import { useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import React from "react";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
@@ -29,6 +28,9 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
     slidesToScroll: 1,
     initialSlide: selected_image_index | 0,
   };
+
+  const image_to_show = path === '/' ? GallerySliderPictures : portfolioPictures
+
   return (
     <motion.div 
       className="flex justify-center items-center fixed top-0 bottom-0 left-0 right-0 absolute w-full h-full z-11"
@@ -44,7 +46,7 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
         </div>
         <div>
           <Slider {...settings}>
-            {GallerySliderPictures.map(el => 
+            {image_to_show.map(el => 
               <div key={el.id} className="cursor-pointer">
                 <Image 
                   src={el.src} 
@@ -52,14 +54,15 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
                   height={600} 
                   alt="gallery slider image"
                 />
-              </div>
+              </div> 
+              
             )}
             
           </Slider>
         </div>
-          <div className="flex justify-center items-center">
+          {!path === "/portfolio" && <div className="flex justify-center items-center">
             <Button onClick={() => {path.push('/portfolio')}}>View More</Button>
-          </div>
+          </div>}
       </div>
     </motion.div>
   );

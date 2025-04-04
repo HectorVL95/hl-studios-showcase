@@ -4,6 +4,7 @@
  import { useState } from "react";
  import { motion } from "motion/react"
  import { MdEmail } from "react-icons/md";
+ import { useForm } from "@formspree/react";
  import { useRouter } from "next/navigation";
  import Button from "@/app/components/button";
  import SectionLayout from "../section-layout";
@@ -12,13 +13,8 @@
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
-  
-  const [acknoledgement_message, set_acknoledgement_message] = useState(false);
-
-  //Pending working on contact form to be submited through formspree
-
-  const path = useRouter()
-
+  const [state, handle_submit] = useForm('mwplnojg');
+  const path = useRouter();
   const [form, set_form] = useState({
    name: '',
    email:'',
@@ -27,24 +23,17 @@ const Contact = () => {
    message: ''
   });
 
-  const handle_click = () => {
-    if(form.name === '' || form.email === '' ||  form.message === '' ) {
-      return;
-    }
-    set_acknoledgement_message(true)
-  }
-
   return (
     <SectionLayout>
       <TitlenSubtitle  title='Contact Us' subtitle='We are looking forward to hearing from you soon'/>
-      <div className="py-24">
+      <div className="py-12 lg:py-24">
         { 
-          acknoledgement_message ? 
+          state.succeeded ?
           <motion.div className="flex items-center justify-center" initial={{scale: 0}} animate={{scale: 1}}>
             <div className="flex flex-col justify-center items-center gap-8 max-w-[600px]">
-              <FaCircleCheck  className="w-76 h-76"/>
+              <FaCircleCheck  className="w-48 h-48 lg:w-76 lg:h-76"/>
               <div>
-                <p className="text-center font-bold text-7xl">Your message has been sent</p>
+                <p className="text-center font-bold text-4xl lg:text-7xl">Your message has been sent</p>
               </div>
               <p className="text-center text-2xl">We will get back to you in the next 24 to 48 business hours</p>
               <Button onClick={() => path.push('/')}>Back to Home Page</Button>
@@ -53,25 +42,25 @@ const Contact = () => {
           :     
           <div className="flex flex-col-reverse lg:flex-row gap-24 lg:gap-48 justify-between">
             <div className="flex flex-col gap-4">
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col lg:flex-row gap-4 items-center">
                 <Link href="mailto:contact@hlstudios.io">
                   <MdEmail className="w-20 h-20" />
                 </Link>
                 <p className="text-2xl">contact@hlstudios.io</p>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col flex-sa lg:flex-row gap-4 items-center">
                 <Link href="https://www.facebook.com/hlstudiosmx">
                   <FaFacebook className="w-20 h-20" />
                 </Link>
                 <p className="text-2xl">H&L Studios</p>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col flex-sa lg:flex-row gap-4 items-center">
                 <Link href="https://www.instagram.com/hlstudiosmx/">
                   <FaInstagram className="w-20 h-20" />
                 </Link>
                 <p className="text-2xl">@hlstudiosmx</p>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col flex-sa lg:flex-row gap-4 items-center">
                 <Link href="https://wa.me/16722001523">
                   <FaWhatsapp className="w-20 h-20" />
                 </Link>
@@ -80,9 +69,8 @@ const Contact = () => {
             </div>
             <div className="w-full">
               <form   
-                action="https://formspree.io/f/mwplnojg"
                 method="POST" 
-                onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
+                onSubmit={handle_submit} className="flex flex-col gap-4">
                 <div className="flex flex-col lg:grid lg:grid-rows-2 lg:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-[1px]">
                     <label>Name</label>
@@ -133,7 +121,7 @@ const Contact = () => {
                     style={{backgroundColor: "#282828", padding: '10px', width: '100%', height:'220px'}} />
                 </div>
                 <div className="flex justify-center">
-                  <Button type_btn={'submit'} onClick={handle_click}>Send Message</Button>
+                  <Button type_btn={'submit'} >Send Message</Button>
                 </div>
               </form>
             </div>

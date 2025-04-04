@@ -14,8 +14,6 @@ const Homepage = () => {
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false)
   const [selected_image_index, set_selected_image_index] = useState<number | null>(null)
 
-  //Pending
-  
 
   const shown_image_fn = () => {
     if (count === 0) {
@@ -39,7 +37,7 @@ const Homepage = () => {
     }
   }, [is_mobile])
 
-//Work to better up the animation
+
   useEffect(() => {
     // set_animated(true)
     shown_image_fn();

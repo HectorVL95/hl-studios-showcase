@@ -1,14 +1,15 @@
 import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
+import TitlenSubtitle from "@/app/components/title";
 
 const ServicesHomepage = () => {
   const router = useRouter();
-
+  
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
-        <h3 className="text-6xl">Services</h3>
+        <TitlenSubtitle title={'Services'}/>
         <div className="flex flex-col gap-8">
           <div className="flex flex-wrap gap-8 justify-center items-center">
             <Button onClick={() => router.push('/services?service=Weddings#wed')} pill>
