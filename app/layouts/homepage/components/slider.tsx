@@ -58,8 +58,6 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     set_show_slider_big_pic(true)
   }
 
-  //Pending on it
-
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
