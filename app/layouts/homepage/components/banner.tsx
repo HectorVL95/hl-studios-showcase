@@ -15,12 +15,12 @@ const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
           width="100%"
           height="100%"
           muted={true}
-          style={{position:"absolute", top:0, left:0, overflow:"hidden"}}
+          style={{position:"absolute", top: -260, overflow:"hidden", maxWidth: 1440, zIndex:1 }}
           
         />
         :  
         <div
-          className={`bg-cover bg-center bg-no-repeat w-full h-full flex justify-center items-center transition-all duration-1000 ease-in-out ${animated ? 'opacity-0' : 'opacity-100'}`}
+          className={`z-10 bg-cover bg-center bg-no-repeat w-full h-full flex justify-center items-center transition-all duration-1000 ease-in-out ${animated ? 'opacity-0' : 'opacity-100'}`}
           style={{ backgroundImage: `url('/images/${img}')` }}
         >
           {text && <p className="uppercase text-7xl sm:2xl md:text-4xl">{text}</p>}
