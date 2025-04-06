@@ -15,20 +15,20 @@ const ServicesPage = () => {
   return (
     <SectionLayout>
       <TitlenSubtitle  title='Services' />
-      <SectionLayout>
-      <div className="flex flex-col gap-12 lg:gap-2">
-        {services_data.map((service: ServiceDataTypes, index: number) => 
-          <Service
-            key={index}
-            img={service.img} 
-            title={service.title} 
-            service_card={service.services_card}
-            selected_service={found === service.title}
-            id_tag={service.id_tag}
-          />
-        )}
+      <section className="py-24">
+        <div className="flex flex-col gap-12 lg:gap-2">
+          {services_data.map((service: ServiceDataTypes, index: number) => 
+            <Service
+              key={index}
+              img={service.img} 
+              title={service.title} 
+              service_card={service.services_card}
+              selected_service={found === service.title}
+              id_tag={service.id_tag}
+            />
+          )}
         </div>
-      </SectionLayout>
+      </section>
     </SectionLayout>   
   );
 }
