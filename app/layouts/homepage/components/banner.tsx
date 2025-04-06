@@ -3,8 +3,6 @@ import ReactPlayer from "react-player/vimeo"
 
 const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
 
-  //Pending working on it!!!!!!!!!!!
-
   return (
     <div className="h-[480px] lg:h-[900px]">
     { video ? 
@@ -15,10 +13,8 @@ const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
           width="100%"
           height="100%"
           muted={true}
-          style={{position:"absolute", top: -260, overflow:"hidden", maxWidth: 1440, zIndex:1 }}
-          
         />
-        :  
+        :
         <div
           className={`z-10 bg-cover bg-center bg-no-repeat w-full h-full flex justify-center items-center transition-all duration-1000 ease-in-out ${animated ? 'opacity-0' : 'opacity-100'}`}
           style={{ backgroundImage: `url('/images/${img}')` }}

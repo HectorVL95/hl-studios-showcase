@@ -7,6 +7,7 @@ import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
 import { motion } from "motion/react"
 import { usePathname } from "next/navigation";
 import portfolioPictures from "../data/portfolio-pictures";
+import Portfolio from "../layouts/portfolio/portfolio";
 
 
 type SliderBigPicProps = {
@@ -19,7 +20,7 @@ type SliderBigPicProps = {
 
 const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, selected_image_index, set_selected_image_index }) => {
   const path = usePathname();
-
+  
   const settings = {
     dots: false,
     infinite: false,
@@ -40,27 +41,25 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
       exit={{opacity: 0, scale:0.8}}
       transition={{duration: 0.3, ease: 'easeInOut'}}
     >
-      <div className="flex justify-center flex-col gap-8 max-w-[768px]">
+      <div className={`flex justify-center flex-col gap-8 ${path === '/portfolio' ? 'max-w-[480px]' : 'max-w-[768px]'}`}>
         <div className="flex justify-end">
           <IoMdClose className="cursor-pointer w-8 h-8" onClick={() => {set_show_slider_big_pic(false); set_selected_image_index(null)} }/>
         </div>
         <div>
           <Slider {...settings}>
             {image_to_show.map(el => 
-              <div key={el.id} className="cursor-pointer">
+              <div key={el.id} className="cursor-pointer" >
                 <Image 
                   src={el.src} 
-                  width={760} 
-                  height={600} 
+                  width={path === '/portfolio'? 400 : 760}
+                  height= {path === '/portfolio'? 400 : 760}
                   alt="gallery slider image"
                 />
               </div> 
-              
             )}
-            
           </Slider>
         </div>
-          {!path === "/portfolio" && <div className="flex justify-center items-center">
+          {path === "/portfolio" ? null : <div className="flex justify-center items-center">
             <Button onClick={() => {path.push('/portfolio')}}>View More</Button>
           </div>}
       </div>

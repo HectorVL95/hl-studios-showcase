@@ -4,9 +4,11 @@ import Image from "next/image";
 import Button from "../components/button";
 import { useRouter } from "next/navigation";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { useResponsive } from "../hooks/useResponsive";
 
 const Footer = () => {
   const path = useRouter();
+  const { is_mobile } = useResponsive();
 
   const handle_message_send = () => {
     path.push('/contact')
@@ -35,13 +37,13 @@ const Footer = () => {
         </div>
       </form>
       <div>
-      <iframe 
+      {!is_mobile && <iframe 
         width="450" 
         height="300" 
         scrolling="no" 
         style={{border: 'none'}}
         src="https://maps.google.com/maps?width=450&amp;height=300&amp;hl=en&amp;q=%20Vancouver+(Vancouver)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed&amp;style=element:geometry%7Ccolor:0x212121%7Celement:labels.icon%7Cvisibility:off%7Celement:labels.text.fill%7Ccolor:0x757575%7Celement:labels.text.stroke%7Ccolor:0x212121%7Celement:water%7Ccolor:0x000000%7Celement:landscape%7Ccolor:0x2c2c2c">
-        </iframe>
+        </iframe>}
         </div>
       <div className="flex flex-col justify-center items-center gap-4">
         <div>

@@ -11,9 +11,8 @@ const Homepage = () => {
   const [count, set_count] = useState(0);
   const [shown_image, set_shown_image] = useState('');
   const [animated, set_animated] = useState(false);
-  const [show_slider_big_pic, set_show_slider_big_pic] = useState(false)
-  const [selected_image_index, set_selected_image_index] = useState<number | null>(null)
-
+  const [show_slider_big_pic, set_show_slider_big_pic] = useState(false);
+  const [selected_image_index, set_selected_image_index] = useState<number | null>(null);
 
   const shown_image_fn = () => {
     if (count === 0) {
@@ -35,7 +34,7 @@ const Homepage = () => {
     if (is_mobile) {
       set_show_slider_big_pic(false)
     }
-  }, [is_mobile])
+  }, [is_mobile]);
 
 
   useEffect(() => {
@@ -44,7 +43,7 @@ const Homepage = () => {
     const timeout = setTimeout(() => {set_animated(false)}, 1000)
     
     return () => clearTimeout(timeout)
-  }, [count])
+  }, [count]);
 
   return (
     <>
