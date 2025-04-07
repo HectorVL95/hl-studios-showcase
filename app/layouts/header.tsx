@@ -13,7 +13,6 @@ type HeaderProps = {
 }
 
 const Header:React.FC<HeaderProps> = ({ header_nav, set_header_nav }) => { 
-
   const { is_mobile } = useResponsive();
   const router = useRouter();
   const [is_top, set_is_top] = useState(false);
@@ -25,7 +24,7 @@ const Header:React.FC<HeaderProps> = ({ header_nav, set_header_nav }) => {
     }
 
     const handle_scroll = () => {
-      set_is_top(window.scrollY === 0)
+      set_is_top(window.scrollY === 0);
     }
 
     window.addEventListener('scroll', handle_scroll);
@@ -33,13 +32,11 @@ const Header:React.FC<HeaderProps> = ({ header_nav, set_header_nav }) => {
     return () => {
       window.removeEventListener('scroll', handle_scroll);
     }
-  }, [header_nav, is_mobile])
-
-  
+  }, [header_nav, is_mobile]);
 
   return (
     <header className={`fixed w-full max-w-[1440px] flex justify-between items-center z-10 px-4 lg:px-8 py-6 transition-all duration-300 ${is_top && !header_nav && path === '/' ? 'bg-transparent' : 'bg-[#1E1E1E]' }`}>
-      <div onClick={() => router.push('/')} className="hover:cursor-pointer">
+      <div onClick={() => {router.push('/'); set_header_nav(false)}} className="hover:cursor-pointer">
         {
           is_mobile ?  
             <Image src="/images/h&l-logo.png" width={140} height={140} alt="H&L Logo"/> 

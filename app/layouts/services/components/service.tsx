@@ -41,7 +41,7 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_se
           <div className="flex flex-wrap gap-8 justify-center items-start">
             {
               service_card && service_card.map((el, index) => 
-                <article key={index} className="flex flex-col gap-4 bg-[#282828] border p-[30px] min-w-[360px] max-w-[400px] border-none gap-4 rounded-[20px]">
+                <article key={index} className="flex flex-col gap-4 bg-[#282828] border p-[30px] min-w-[280px] max-w-[400px] border-none gap-4 rounded-[20px]">
                   <p className="text-2xl font-bold text-center">{el.title}</p>
                   <h3 className="text-5xl font-bold text-center">
                     {el.price}

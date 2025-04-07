@@ -5,6 +5,7 @@ import Button from "../components/button";
 import { useRouter } from "next/navigation";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { useResponsive } from "../hooks/useResponsive";
+import { useMediaQuery } from "@mui/material";
 
 const Footer = () => {
   const path = useRouter();
@@ -16,7 +17,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="flex flex-col lg:flex-row justify-between items-center gap-8 py-24 px-8">
+    <footer className="flex flex-col-reverse lg:flex-row justify-between items-center gap-8 py-24 px-8">
       <form className="flex flex-col gap-4">
         <div className="flex flex-col">
           <label>Email</label>
@@ -35,15 +36,20 @@ const Footer = () => {
             send
           </Button>
         </div>
+        {is_mobile && 
+        <div>
+          <p>&copy; {new Date().getFullYear()} H&L Studios. All rights reserved.</p>
+        </div>
+      }
       </form>
       <div>
-      {!is_mobile && <iframe 
-        width="450" 
-        height="300" 
+      <iframe 
+        width={is_mobile ? 260 : 450}
+        height="300"
         scrolling="no" 
         style={{border: 'none'}}
         src="https://maps.google.com/maps?width=450&amp;height=300&amp;hl=en&amp;q=%20Vancouver+(Vancouver)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed&amp;style=element:geometry%7Ccolor:0x212121%7Celement:labels.icon%7Cvisibility:off%7Celement:labels.text.fill%7Ccolor:0x757575%7Celement:labels.text.stroke%7Ccolor:0x212121%7Celement:water%7Ccolor:0x000000%7Celement:landscape%7Ccolor:0x2c2c2c">
-        </iframe>}
+        </iframe>
         </div>
       <div className="flex flex-col justify-center items-center gap-4">
         <div>
@@ -62,9 +68,11 @@ const Footer = () => {
             <FaInstagram className="h-16 w-16" />
           </Link>
         </div>
-        <div>
-          <p>&copy; {new Date().getFullYear()} H&L Studios. All rights reserved.</p>
-        </div>
+        {!is_mobile && 
+          <div>
+            <p>&copy; {new Date().getFullYear()} H&L Studios. All rights reserved.</p>
+          </div>
+        }
       </div>
     </footer>
   );

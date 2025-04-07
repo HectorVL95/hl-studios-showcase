@@ -2,6 +2,18 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 @font-face {
   font-family: 'GeosansLight';
   src: url(/public/fonts/GeosansLight.ttf) format('truetype');

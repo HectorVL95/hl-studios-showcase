@@ -7,7 +7,6 @@ const TitlenSubtitle: React.FC<TitleProps> = ({ title, subtitle }) => {
     { 
       subtitle && <p className="text-[24px]  lg:text-[32px] lg:align-middle">{subtitle}</p>
     }
-
     </>
   );
 }

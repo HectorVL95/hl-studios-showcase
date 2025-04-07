@@ -60,7 +60,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
 
   return (
     <SectionLayout>
-      <div className="flex flex-col gap-12">
+      <div className={`flex flex-col gap-12 ${is_mobile && 'px-4'}`}>
         <Slider {...settings}>   
           {
             GallerySliderPictures.map(el => 
@@ -69,7 +69,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
                 width={350} 
                 height={300} 
                 alt="gallery slider image"
-                className="cursor-pointer py-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95" 
+                className={`py-4 ${!is_mobile  && 'cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95'}`}
                 onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}
               />
           )}
