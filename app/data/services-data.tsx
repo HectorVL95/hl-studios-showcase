@@ -18,7 +18,7 @@ const services_data: ServiceDataTypes[] = [
           '1 Wedding Film (15 to 30 min)',
           '1 Short Highlights (1 min)',
           'Digital Gallery',
-          "Crystal USB Drive with all the event content delivered in a custom wooden box engraved with the bride and groom's name.",,
+          "Crystal USB Drive with all the event content delivered in a custom wooden box engraved with the bride and groom's name.",
           'Content delivered within 2 business weeks'
         ]
       },

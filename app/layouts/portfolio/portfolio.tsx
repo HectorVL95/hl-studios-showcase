@@ -1,15 +1,15 @@
 'use client'
 
-import TitlenSubtitle from "@/app/components/title";
-import SectionLayout from "../section-layout";
-import Masonry from "@mui/lab/Masonry";
-import portfolioPictures from "@/app/data/portfolio-pictures";
 import Image from "next/image";
-import { useState } from "react";
-import SliderBigPic from "@/app/components/slider-big-pic";
-import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import Masonry from "@mui/lab/Masonry";
+import { useEffect, useState } from "react";
+import SectionLayout from "../section-layout";
+import { useTheme } from '@mui/material/styles';
+import TitlenSubtitle from "@/app/components/title";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useResponsive } from "@/app/hooks/useResponsive";
+import SliderBigPic from "@/app/components/slider-big-pic";
+import portfolioPictures from "@/app/data/portfolio-pictures";
 
 const Portfolio = () => {
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false);
@@ -27,7 +27,6 @@ const Portfolio = () => {
   else if (isMd) columns = 3
   else if (isLg) columns = 4
 
-  //Pending working on it
   const handle_click = (id:number) => {
     if(is_mobile) {
       return;
@@ -35,6 +34,12 @@ const Portfolio = () => {
     set_show_slider_big_pic(true)
     set_selected_image_index(id)
   }
+
+  useEffect(() => {
+    if (is_mobile) {
+      set_show_slider_big_pic(false)
+    }
+  }, [is_mobile]);
   
   return (
     <SectionLayout>

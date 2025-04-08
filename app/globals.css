@@ -35,6 +35,11 @@ body {
   align-items: center;
 }
 
+.big-pic-container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 @media (min-width:480px) {
   .slick-slide {
     padding: 0 8px

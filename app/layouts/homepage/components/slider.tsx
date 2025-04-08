@@ -4,9 +4,8 @@ import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
-import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
-import { motion } from "motion/react";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
 
 type GallerySliderProps  = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
@@ -55,7 +54,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
 
   const handle_show_slider_big_pic = () => {
     if (is_mobile) return;
-    set_show_slider_big_pic(true)
+    set_show_slider_big_pic(true);
   }
 
   return (
@@ -65,6 +64,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
           {
             GallerySliderPictures.map(el => 
               <Image 
+                key={el.id}
                 src={el.src} 
                 width={350} 
                 height={300} 

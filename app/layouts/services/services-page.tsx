@@ -10,7 +10,7 @@ import { useSearchParams } from "next/navigation";
 const ServicesPage = () => {
 
   const params = useSearchParams();
-  const found = params.get('service')
+  const found = params.get('service') ?? '';
 
   return (
     <SectionLayout>
@@ -21,7 +21,7 @@ const ServicesPage = () => {
             <Service
               key={index}
               img={service.img} 
-              title={service.title} 
+              title={service.title || 'Untitled'} 
               service_card={service.services_card}
               selected_service={found === service.title}
               id_tag={service.id_tag}

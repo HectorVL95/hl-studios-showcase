@@ -1,8 +1,6 @@
 import { BannerProps } from "@/app/types/children-props-types";
-import ReactPlayer from "react-player/vimeo"
 
 const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
-
   return (
     <div className="h-[480px] lg:h-[900px]">
     { video ?
