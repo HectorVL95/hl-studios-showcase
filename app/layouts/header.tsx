@@ -27,6 +27,10 @@ const Header:React.FC<HeaderProps> = ({ header_nav, set_header_nav }) => {
       set_is_top(window.scrollY === 0);
     }
 
+    if (window.scrollY === 0) {
+      set_is_top(true);
+    }
+
     window.addEventListener('scroll', handle_scroll);
 
     return () => {

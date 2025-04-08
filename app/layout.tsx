@@ -21,9 +21,9 @@ const RootLayout = ({
 
   useEffect(() => {
     if (!is_mobile) {
-      set_header_nav(false)
+      set_header_nav(false);
     }
-  }, [is_mobile])
+  }, [is_mobile]);
 
   useEffect(() => {
     if (header_nav) {
@@ -32,15 +32,15 @@ const RootLayout = ({
     if (!header_nav) {
       document.body.style.overflow = 'visible'
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (path === '/contact') {
-      set_hide_footer(true)
+      set_hide_footer(true);
     } else {
-      set_hide_footer(false)
+      set_hide_footer(false);
     }
-  }, [path])
+  }, [path]);
   
 
   return (

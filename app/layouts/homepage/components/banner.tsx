@@ -5,8 +5,8 @@ const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
     <div className="h-[480px] lg:h-[900px]">
     { video ?
         <div className="relative w-full h-full">
-          <video autoPlay loop playsInline src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
-          {text && <p className="absolute inset-0 flex items-center justify-center uppercase text-xl sm:text-2xl md:text-4xl text-center">{text}</p>}
+          <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
+          {text && <p className="absolute inset-0 flex items-center justify-center uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text}</p>}
         </div>
         :
         <div
