@@ -1,8 +1,11 @@
+import { Suspense } from "react";
 import ServicesPage from "../layouts/services/services-page";
 
 const page = () => {
   return (
-    <ServicesPage />
+    <Suspense fallback={<p>...Loading Services</p>}>
+      <ServicesPage />
+    </Suspense>
   );
 }
 
