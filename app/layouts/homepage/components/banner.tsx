@@ -1,12 +1,12 @@
 import { BannerProps } from "@/app/types/children-props-types";
 
-const Banner: React.FC<BannerProps> = ({ text, img, video, animated }) => {
+const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated }) => {
   return (
     <div className="h-[480px] lg:h-[900px]">
     { video ?
         <div className="relative w-full h-full">
           <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
-          {text && <p className="absolute inset-0 flex items-center justify-center uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text}</p>}
+          {text && <p className="absolute inset-0 flex items-center justify-center uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text} {text_bigger && <span className="text text-2xl sm:text-3xl lg:text-5xl">{text_bigger}</span>}</p>}
         </div>
         :
         <div

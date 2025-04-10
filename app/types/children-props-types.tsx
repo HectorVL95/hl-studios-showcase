@@ -4,6 +4,7 @@ export type ChildrenProps = {
 
 export type BannerProps = {
   text?: string,
+  text_bigger?: string,
   img?: string,
   video?: boolean,
   animated?: boolean

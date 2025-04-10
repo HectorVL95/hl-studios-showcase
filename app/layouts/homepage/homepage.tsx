@@ -47,7 +47,7 @@ const Homepage = () => {
 
   return (
     <>
-      <Banner text={'Lets make your story unforgetable'} video />
+      <Banner text={'Lets make your story'} text_bigger="unforgetable" video />
       <About />
       <Banner text='' animated={animated} img={shown_image} />
       {show_slider_big_pic && 
