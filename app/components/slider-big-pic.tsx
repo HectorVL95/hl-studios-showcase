@@ -44,11 +44,11 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({ set_show_slider_big_pic, se
         </div>
           <Slider {...settings}>
             {image_to_show.map(el => 
-              <div key={el.id} className="cursor-pointer big-pic-container">
+              <div key={el.id} className="cursor-pointer big-pic-container max-h-[760px]object-contain">
                 <Image 
                   src={el.src} 
-                  width={path === '/portfolio'? 600 : 760}
-                  height= {path === '/portfolio'? 600 : 760}
+                  width={path === '/portfolio'? 540 : 760}
+                  height= {path === '/portfolio'? 540 : 760}
                   alt="gallery slider image"
                   className="self-center"
                 />

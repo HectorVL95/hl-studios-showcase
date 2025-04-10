@@ -6,7 +6,12 @@ const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated
     { video ?
         <div className="relative w-full h-full">
           <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
-          {text && <p className="absolute inset-0 flex items-center justify-center uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text} {text_bigger && <span className="text text-2xl sm:text-3xl lg:text-5xl">{text_bigger}</span>}</p>}
+          {text && 
+          <div className="flex flex-col absolute inset-0 items-center justify-center ">
+            <p className="uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text}</p>
+            {text_bigger && <p className="uppercase text text-center text-3xl sm:text-4xl lg:text-[55px] mr-[6px]">{text_bigger}</p>}
+          </div>
+            }
         </div>
         :
         <div

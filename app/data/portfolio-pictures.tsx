@@ -67,17 +67,17 @@ const portfolioPictures =  [{
 },
 {
   id: 16,
-  src: '/images/h&l-pics/megan',
+  src: '/images/h&l-pics/megan.jpg',
   alt: 'Portfolio Picture',
 },
 {
   id: 17,
-  src: '/images/h&l-pics/megan-2',
+  src: '/images/h&l-pics/megan-2.jpg',
   alt: 'Portfolio Picture',
 },
 {
   id: 18,
-  src: '/images/h&l-pics/megan-3',
+  src: '/images/h&l-pics/megan-3.jpg',
   alt: 'Portfolio Picture',
 },
 {
@@ -122,7 +122,7 @@ const portfolioPictures =  [{
 },
 {
   id: 27,
-  src: '/images/h&l-pics/wedding-2,jpg',
+  src: '/images/h&l-pics/wedding-2.jpg',
   alt: 'Portfolio Picture',
 },
 {
