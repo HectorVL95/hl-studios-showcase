@@ -6,6 +6,7 @@ import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
+import portfolioPictures from "@/app/data/portfolio-pictures";
 
 type GallerySliderProps  = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
