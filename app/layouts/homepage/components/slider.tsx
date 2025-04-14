@@ -6,7 +6,6 @@ import Button from "@/app/components/button";
 import SectionLayout from "../../section-layout";
 import { useResponsive } from "@/app/hooks/useResponsive";
 import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
-import portfolioPictures from "@/app/data/portfolio-pictures";
 
 type GallerySliderProps  = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>
@@ -52,9 +51,6 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
       }
     ]
   };
-
-    const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 7 || el.id === 19 || el.id === 22 || el.id === 34)
-  
 
   const handle_show_slider_big_pic = (id: number) => {
     if (is_mobile) return;
