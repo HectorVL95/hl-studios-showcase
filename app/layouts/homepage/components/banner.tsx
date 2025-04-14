@@ -2,7 +2,7 @@ import { BannerProps } from "@/app/types/children-props-types";
 
 const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated }) => {
   return (
-    <div className="h-[320px] sm:h-[480px] md:h-[600px] lg:h-[800px] xl:h-[900px] w-full">
+    <section className="h-[320px] sm:h-[480px] md:h-[600px] lg:h-[800px] xl:h-[900px] w-full">
     { video ?
         <div className="relative w-full h-full">
           <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
@@ -20,7 +20,7 @@ const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated
         >
         {text && <p className="uppercase text-7xl sm:2xl md:text-4xl">{text}</p>}
         </div>}
-    </div>
+    </section>
   );
 };
 

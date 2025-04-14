@@ -12,7 +12,7 @@ const Footer = () => {
   const path = useRouter();
   const { is_mobile } = useResponsive();
   const { set_message_sent } = message_sent_store();
-  const [, handle_submit] = useForm('mwplnojg');
+  const [, handle_submit] = useForm('mnnprdqg');
   const [form, set_form] = useState({
      email: '',
      message: ''

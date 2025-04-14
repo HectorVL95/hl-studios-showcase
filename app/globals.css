@@ -8,11 +8,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
 input[type=number] {
   -moz-appearance: textfield;
 }
-
 
 @font-face {
   font-family: 'GeosansLight';
@@ -52,8 +50,8 @@ body {
   }
 }
 
-  @media (min-width:768px) {
-  .slick-slide {
-    padding: 0 24px
-  }
+@media (min-width:768px) {
+.slick-slide {
+  padding: 0 24px
+}
 }
