@@ -160,6 +160,26 @@ const portfolioPictures =  [{
   src: '/images/h&l-pics/yunuen-maternity-5.jpg',
   alt: 'Portfolio Picture',
 },
+{
+  id: 35,
+  src: '/images/h&l-pics/family-ha.jpg',
+  alt: 'Portfolio Picture',
+},
+{
+  id: 36,
+  src: '/images/h&l-pics/family-ha-2.jpg',
+  alt: 'Portfolio Picture',
+},
+{
+  id: 37,
+  src: '/images/h&l-pics/family-ha-3.jpg',
+  alt: 'Portfolio Picture',
+},
+{
+  id: 34,
+  src: '/images/h&l-pics/family-ha-4.jpg',
+  alt: 'Portfolio Picture',
+},
 ]
 
 export default portfolioPictures;

@@ -6,7 +6,6 @@ import { IoMdClose } from "react-icons/io";
 import Button from "@/app/components/button";
 import { usePathname, useRouter } from "next/navigation";
 import portfolioPictures from "../data/portfolio-pictures";
-import GallerySliderPictures from "@/app/data/gallery-slider-pictures";
 
 type SliderBigPicProps = {
   set_show_slider_big_pic: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,7 +21,11 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({
   const path = usePathname();
   const route = useRouter();
 
-  const image_to_show = path === "/" ? GallerySliderPictures : portfolioPictures;
+  const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 7 || el.id === 22 || el.id === 19 || el.id === 34)
+
+  console.log(home_page_slider)
+
+  const show_homepage_slider = path === '/' ? home_page_slider : portfolioPictures
 
   const settings = {
     dots: false,
@@ -57,7 +60,7 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({
         </div>
         <div className="w-full flex justify-center items-center">
           <Slider {...settings} className="w-full relative">
-            {image_to_show.map((el) => (
+            {show_homepage_slider.map((el) => (
               <div key={el.id} className="w-full h-[70vh] flex justify-center items-center">
                 <div className="relative w-full h-full max-h-[760px]">
                   <Image

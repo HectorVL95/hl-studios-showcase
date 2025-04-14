@@ -27,7 +27,7 @@ const Portfolio = () => {
   else if (isMd) columns = 3
   else if (isLg) columns = 4
 
-  const handle_click = (id:number) => {
+  const handle_open_big_slider = (id:number) => {
     if(is_mobile) {
       return;
     }
@@ -54,7 +54,7 @@ const Portfolio = () => {
             width={300}
             height={300}
             className={`rounded-[25px] ${!is_mobile && 'cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95'}`}
-            onClick={() => handle_click(el.id)}
+            onClick={() => handle_open_big_slider(el.id)}
           />
         ))}
       </Masonry>

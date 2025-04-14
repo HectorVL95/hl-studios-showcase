@@ -11,12 +11,12 @@ const GallerySliderPictures = [
   },
   {
     id: 2,
-    src: '/images/gallery-slider-girl.png',
+    src: '/images/gallery-slider-girl2.png',
     alt: "Gallery Slider Image"
   },
   {
     id: 3,
-    src: '/images/gallery-slider-girl2.png',
+    src: '/images/gallery-slider-girl.png',
     alt: "Gallery Slider Image"
   },
   {

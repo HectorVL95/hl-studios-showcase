@@ -53,9 +53,12 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     ]
   };
 
-  const handle_show_slider_big_pic = () => {
+    const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 7 || el.id === 19 || el.id === 22 || el.id === 34)
+  
+
+  const handle_show_slider_big_pic = (id: number) => {
     if (is_mobile) return;
-    set_show_slider_big_pic(true);
+    set_show_slider_big_pic(true);set_selected_image_index(id);
   }
 
   return (
@@ -71,7 +74,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
                 height={300} 
                 alt="gallery slider image"
                 className={`py-4 ${!is_mobile  && 'cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95'}`}
-                onClick={() => {handle_show_slider_big_pic(); set_selected_image_index(el.id);}}
+                onClick={() => {handle_show_slider_big_pic(el.id)}}
               />
           )}
         </Slider>

@@ -18,7 +18,7 @@ const Homepage = () => {
     if (count === 0) {
       set_shown_image('girl-woods-pic.png');
     } else if ( count === 1) {
-      set_shown_image('family-wedding-pic.png');
+      set_shown_image('family-ha-2.jpg');
     } else if (count === 2) {
       set_shown_image('banner-pic.png');
     }
@@ -35,7 +35,6 @@ const Homepage = () => {
       set_show_slider_big_pic(false)
     }
   }, [is_mobile]);
-
 
   useEffect(() => {
     // set_animated(true)

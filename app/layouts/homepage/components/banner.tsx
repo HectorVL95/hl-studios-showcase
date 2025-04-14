@@ -2,7 +2,7 @@ import { BannerProps } from "@/app/types/children-props-types";
 
 const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated }) => {
   return (
-    <div className="h-[480px] lg:h-[900px]">
+    <div className="h-[320px] sm:h-[480px] md:h-[600px] lg:h-[800px] xl:h-[900px] w-full">
     { video ?
         <div className="relative w-full h-full">
           <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />

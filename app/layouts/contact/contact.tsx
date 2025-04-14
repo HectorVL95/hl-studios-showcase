@@ -1,20 +1,22 @@
  'use client'
 
- import Link from "next/link";
- import { useState } from "react";
- import { motion } from "motion/react"
- import { MdEmail } from "react-icons/md";
- import { useForm } from "@formspree/react";
- import { useRouter } from "next/navigation";
- import Button from "@/app/components/button";
- import SectionLayout from "../section-layout";
- import { FaCircleCheck } from "react-icons/fa6";
- import TitlenSubtitle from "@/app/components/title";
+import Link from "next/link";
+import { useState } from "react";
+import { motion } from "motion/react"
+import { MdEmail } from "react-icons/md";
+import { useForm } from "@formspree/react";
+import { useRouter } from "next/navigation";
+import Button from "@/app/components/button";
+import SectionLayout from "../section-layout";
+import { FaCircleCheck } from "react-icons/fa6";
+import TitlenSubtitle from "@/app/components/title";
+import message_sent_store from "@/app/store/message-sent-store";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
   const [state, handle_submit] = useForm('mwplnojg');
   const path = useRouter();
+  const { message_sent, reset_message_sent } = message_sent_store();
   const [form, set_form] = useState({
    name: '',
    email:'',
@@ -28,15 +30,15 @@ const Contact = () => {
       <TitlenSubtitle  title='Contact Us' subtitle='We are looking forward to hearing from you soon'/>
       <div className="py-12 lg:py-24">
         { 
-          state.succeeded ?
+          state.succeeded || message_sent ?
           <motion.div className="flex items-center justify-center" initial={{scale: 0}} animate={{scale: 1}}>
             <div className="flex flex-col justify-center items-center gap-8 max-w-[600px]">
-              <FaCircleCheck  className="w-48 h-48 lg:w-76 lg:h-76"/>
+              <FaCircleCheck  className="w-48 h-48 lg:w-64 lg:h-64"/>
               <div>
                 <p className="text-center font-bold text-4xl lg:text-7xl">Your message has been sent</p>
               </div>
-              <p className="text-center text-2xl">We will get back to you in the next 24 to 48 business hours</p>
-              <Button onClick={() => path.push('/')}>Back to Home Page</Button>
+              <p className="text-center text-xl">We will get back to you in the next 24 to 48 business hours</p>
+              <Button onClick={() => {path.push('/'); reset_message_sent()}}>Back to Home Page</Button>
             </div>
           </motion.div>
           :     
