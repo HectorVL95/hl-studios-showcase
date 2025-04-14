@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import Link from "next/link";
 import { useState } from "react";
@@ -14,9 +14,9 @@ import message_sent_store from "@/app/store/message-sent-store";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 const Contact = () => {
-  const [state, handle_submit] = useForm('mwplnojg');
   const path = useRouter();
-  const { message_sent, reset_message_sent } = message_sent_store();
+  const { message_sent } = message_sent_store();
+  const [state, handle_submit] = useForm('mwplnojg');
   const [form, set_form] = useState({
    name: '',
    email:'',
@@ -38,7 +38,7 @@ const Contact = () => {
                 <p className="text-center font-bold text-4xl lg:text-7xl">Your message has been sent</p>
               </div>
               <p className="text-center text-xl">We will get back to you in the next 24 to 48 business hours</p>
-              <Button onClick={() => {path.push('/'); reset_message_sent()}}>Back to Home Page</Button>
+              <Button onClick={() => path.push('/')}>Back to Home Page</Button>
             </div>
           </motion.div>
           :     

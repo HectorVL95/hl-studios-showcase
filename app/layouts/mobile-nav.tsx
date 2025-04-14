@@ -1,5 +1,5 @@
-import { useRouter } from "next/navigation";
 import {motion} from "motion/react"
+import { useRouter } from "next/navigation";
 
 type NavProps = {
   set_header_nav:React.Dispatch<React.SetStateAction<boolean>>
@@ -9,8 +9,8 @@ const MobileNav: React.FC<NavProps> = ({ set_header_nav }) => {
   const router = useRouter();
 
   const handle_contact_btn = (link: string) => {
-    router.push(link)
-    set_header_nav(false)
+    router.push(link);
+    set_header_nav(false);
   }
 
   return (

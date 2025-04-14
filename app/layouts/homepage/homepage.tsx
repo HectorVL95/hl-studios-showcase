@@ -1,16 +1,16 @@
-import Banner from "./components/banner";
 import About from "./components/about";
-import GallerySlider from "./components/slider";
-import ServicesHomepage from "./components/services-homepage";
+import Banner from "./components/banner";
 import { useEffect, useState } from "react";
-import SliderBigPic from "../../components/slider-big-pic";
+import GallerySlider from "./components/slider";
 import { useResponsive } from "@/app/hooks/useResponsive";
+import SliderBigPic from "../../components/slider-big-pic";
+import ServicesHomepage from "./components/services-homepage";
 
 const Homepage = () => {
   const { is_mobile } = useResponsive();
   const [count, set_count] = useState(0);
-  const [shown_image, set_shown_image] = useState('');
   const [animated, set_animated] = useState(false);
+  const [shown_image, set_shown_image] = useState('');
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false);
   const [selected_image_index, set_selected_image_index] = useState<number | null>(null);
 
@@ -18,30 +18,29 @@ const Homepage = () => {
     if (count === 0) {
       set_shown_image('girl-woods-pic.png');
     } else if ( count === 1) {
-      set_shown_image('family-ha-2.jpg');
+      set_shown_image('family-ha-2.png');
     } else if (count === 2) {
       set_shown_image('banner-pic.png');
     }
   }
 
   useEffect(() => {
-    const counting = setInterval(() => set_count((prev) => prev >= 2 ? 0 : prev + 1), 2000)
+    const counting = setInterval(() => set_count((prev) => prev >= 2 ? 0 : prev + 1), 2000);
     
-    return () => clearInterval(counting)  
+    return () => clearInterval(counting);
   }, []);
 
   useEffect(() => {
     if (is_mobile) {
-      set_show_slider_big_pic(false)
+      set_show_slider_big_pic(false);
     }
   }, [is_mobile]);
 
   useEffect(() => {
-    // set_animated(true)
     shown_image_fn();
-    const timeout = setTimeout(() => {set_animated(false)}, 1000)
+    const timeout = setTimeout(() => {set_animated(false)}, 1000);
     
-    return () => clearTimeout(timeout)
+    return () => clearTimeout(timeout);
   }, [count]);
 
   return (

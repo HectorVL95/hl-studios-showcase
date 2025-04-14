@@ -5,7 +5,7 @@ import TitlenSubtitle from "@/app/components/title";
 
 const ServicesHomepage = () => {
   const router = useRouter();
-  
+
   return (
     <SectionLayout>
       <div className="flex flex-col gap-12">
@@ -40,7 +40,7 @@ const ServicesHomepage = () => {
           </div>
           <div className="flex justify-center lg:justify-end">
             <div>
-              <Button onClick={() => router.push('/services?service=View More#custom')}>
+              <Button onClick={() => router.push('/services')}>
                 View More
               </Button>
             </div>

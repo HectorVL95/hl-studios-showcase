@@ -23,8 +23,6 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({
 
   const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 7 || el.id === 22 || el.id === 19 || el.id === 34)
 
-  console.log(home_page_slider)
-
   const show_homepage_slider = path === '/' ? home_page_slider : portfolioPictures
 
   const settings = {

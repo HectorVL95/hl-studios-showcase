@@ -1,5 +1,5 @@
-import { ChildrenProps } from "../types/children-props-types";
 import { useResponsive } from "../hooks/useResponsive";
+import { ChildrenProps } from "../types/children-props-types";
 
 const SectionLayout: React.FC<ChildrenProps> = ({ children }) => {
   const { is_mobile } = useResponsive();

@@ -1,12 +1,13 @@
 'use client'
 
 import "./globals.css";
-import { useState, useEffect } from "react";
 import Header from "./layouts/header";
 import Footer from "./layouts/footer";
+import { useState, useEffect } from "react";
 import MobileNav from "./layouts/mobile-nav";
-import { useResponsive } from "./hooks/useResponsive";
 import { usePathname } from "next/navigation";
+import { useResponsive } from "./hooks/useResponsive";
+import message_sent_store from "./store/message-sent-store";
 
 const RootLayout = ({
   children,
@@ -14,9 +15,10 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
 
-  const [header_nav, set_header_nav] = useState(false);
-  const { is_mobile } = useResponsive();
   const path = usePathname();
+  const { is_mobile } = useResponsive();
+  const { reset_message_sent } = message_sent_store();
+  const [header_nav, set_header_nav] = useState(false);
   const [hide_footer, set_hide_footer] = useState(false);
 
   useEffect(() => {
@@ -39,6 +41,7 @@ const RootLayout = ({
       set_hide_footer(true);
     } else {
       set_hide_footer(false);
+      reset_message_sent();
     }
   }, [path]);
   

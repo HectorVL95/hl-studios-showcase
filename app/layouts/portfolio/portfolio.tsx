@@ -12,10 +12,11 @@ import SliderBigPic from "@/app/components/slider-big-pic";
 import portfolioPictures from "@/app/data/portfolio-pictures";
 
 const Portfolio = () => {
+  const {is_mobile} = useResponsive();
   const [show_slider_big_pic, set_show_slider_big_pic] = useState(false);
   const [selected_image_index, set_selected_image_index] = useState<number | null>(null);
-  const {is_mobile} = useResponsive();
   const theme = useTheme();
+
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   const isMd = useMediaQuery(theme.breakpoints.between('md', 'lg'));
@@ -31,16 +32,16 @@ const Portfolio = () => {
     if(is_mobile) {
       return;
     }
-    set_show_slider_big_pic(true)
-    set_selected_image_index(id)
+    set_show_slider_big_pic(true);
+    set_selected_image_index(id);
   }
 
   useEffect(() => {
     if (is_mobile) {
-      set_show_slider_big_pic(false)
+      set_show_slider_big_pic(false);
     }
   }, [is_mobile]);
-  
+
   return (
     <SectionLayout>
       <TitlenSubtitle title={'Portfolio'} />
@@ -55,6 +56,7 @@ const Portfolio = () => {
             height={300}
             className={`rounded-[25px] ${!is_mobile && 'cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95'}`}
             onClick={() => handle_open_big_slider(el.id)}
+            loading="lazy"
           />
         ))}
       </Masonry>

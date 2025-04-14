@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image"
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
+import { useResponsive } from "@/app/hooks/useResponsive";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { ServiceProps } from "@/app/types/children-props-types";
-import { motion } from "motion/react";
-import { useResponsive } from "@/app/hooks/useResponsive";
 
 const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_service, id_tag }) => {
   const [accordion_open, set_accordion_open] = useState(selected_service || false);
@@ -15,9 +15,9 @@ const Service: React.FC<ServiceProps> = ({ img, title, service_card, selected_se
 
   useEffect(() => {
     if(selected_service) {
-      set_accordion_open(true)
+      set_accordion_open(true);
     }
-  }, [selected_service])
+  }, [selected_service]);
 
   return (
     <div className="flex flex-col gap-8" id={id_tag}>
