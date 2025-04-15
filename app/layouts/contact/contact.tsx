@@ -48,7 +48,7 @@ const Contact = () => {
                 <Link href="mailto:contact@hlstudios.io">
                   <MdEmail className="w-20 h-20" />
                 </Link>
-                <p className="text-2xl">contact@hlstudios.io</p>
+                <p className="text-2xl">contact@hlstudios.info</p>
               </div>
               <div className="flex flex-col flex-sa lg:flex-row gap-4 items-center">
                 <Link href="https://www.facebook.com/hlstudiosmx">

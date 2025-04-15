@@ -8,8 +8,8 @@ const Banner: React.FC<BannerProps> = ({ text, text_bigger, img, video, animated
           <video autoPlay loop playsInline muted src="videos/bridal-dress_video_1080p_original.mp4" className="w-full h-full object-cover relative" />
           {text && 
           <div className="flex flex-col absolute inset-0 items-center justify-center ">
-            <p className="uppercase text-xl sm:text-2xl lg:text-4xl text-center">{text}</p>
-            {text_bigger && <p className="uppercase text text-center text-3xl sm:text-4xl lg:text-[55px] mr-[6px]">{text_bigger}</p>}
+            <p className="uppercase text-xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-center">{text}</p>
+            {text_bigger && <p className="uppercase text text-center text-[28px] sm:text-[51px] md:text-[86px] lg:text-[103px] xl:text-[137px] mr-[6px]">{text_bigger}</p>}
           </div>
             }
         </div>
