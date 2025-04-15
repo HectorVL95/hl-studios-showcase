@@ -66,7 +66,7 @@ const Contact = () => {
                 <Link href="https://wa.me/16722001523">
                   <FaWhatsapp className="w-20 h-20" />
                 </Link>
-                <p className="text-2xl">(672) 123  1234</p>
+                <p className="text-2xl">(672) 200  1523</p>
               </div>
             </div>
             <div className="w-full">
