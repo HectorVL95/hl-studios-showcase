@@ -16,7 +16,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 const Contact = () => {
   const path = useRouter();
   const { message_sent } = message_sent_store();
-  const [state, handle_submit] = useForm('mnnprdqg');
+  const [state, handle_submit] = useForm('mvgaqdbw');
   const [form, set_form] = useState({
    name: '',
    email:'',
@@ -45,10 +45,10 @@ const Contact = () => {
           <div className="flex flex-col-reverse lg:flex-row gap-24 lg:gap-48 justify-between">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col lg:flex-row gap-4 items-center">
-                <Link href="mailto:contact@hlstudios.io">
+                <Link href="mailto:hlstudiosca@outlook.com">
                   <MdEmail className="w-20 h-20" />
                 </Link>
-                <p className="text-2xl">contact@hlstudios.info</p>
+                <p className="text-2xl">hlstudiosca@outlook.com</p>
               </div>
               <div className="flex flex-col flex-sa lg:flex-row gap-4 items-center">
                 <Link href="https://www.facebook.com/hlstudiosmx">
