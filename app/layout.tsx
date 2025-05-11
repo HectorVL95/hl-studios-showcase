@@ -50,7 +50,6 @@ const RootLayout = ({
     <html lang="en">
       <head>
         <title>H&L Studios</title>
-        <link rel="icon" type="image/png" href="/icon-hl.png"/>
       </head>
       <body>
         <Header header_nav={header_nav} set_header_nav={set_header_nav}/>
