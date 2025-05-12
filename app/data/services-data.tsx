@@ -208,7 +208,7 @@ const services_data: ServiceDataTypes[] = [
         ]
       },
       {
-        title:'Golden birthday collection',
+        title:'Golden business production',
         price: 'CA $450',
         services: [
           '2 hours coverage',
@@ -220,7 +220,7 @@ const services_data: ServiceDataTypes[] = [
         ]
       },
       {
-        title:'Deluxe birthday collection',
+        title:'Deluxe business production',
         price: 'CA $799',
         services: [
           '5 hours coverage',
