@@ -59,6 +59,52 @@ const services_data: ServiceDataTypes[] = [
   },
   {
     id: 1,
+    id_tag:'prop',
+    img: '/images/service-proposal.png',
+    title: 'Proposals',
+    services_card: [
+      {
+        title:'Silver proposal collection',
+        price: 'CA $150',
+        services: [
+          '1 hour coverage',
+          '1 Photographer',
+          '1 Location',
+          '20 Edited photos',
+          'Digital Gallery for 3 months',
+        ]
+      },
+      {
+        title:'Golden proposal collection',
+        price: 'CA $250',
+        services: [
+          '1 hour coverage',
+          '1 Photographer',
+          '1 Videographer',
+          '1 Location',
+          '40 Edited photos',
+          '1 Proposal FIlm (1 to 5 min)',
+          'Digital Gallery for 6 months'
+        ]
+      },
+      {
+        title:'Platino proposal collection',
+        price: 'CA $400',
+        services: [
+          '2 hour coverage',
+          '1 Photographer',
+          '1 Videographer',
+          '1 Location',
+          '60 Edited photos',
+          '1 Proposal Film (1 to 15 min)',
+          'Digital Gallery for 12 months',
+          '6 printed & framed photos 8"x10"'
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
     id_tag:'xv',
     img: '/images/service-xvs.png',
     title: 'XVs Celebrations',
@@ -114,7 +160,7 @@ const services_data: ServiceDataTypes[] = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     id_tag:'bd',
     img: '/images/service-bd.png',
     title: 'Birthday Celebrations',
@@ -158,7 +204,7 @@ const services_data: ServiceDataTypes[] = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     id_tag:'mat',
     img: '/images/service-maternity.png',
     title: 'Maternity',
@@ -192,7 +238,7 @@ const services_data: ServiceDataTypes[] = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     id_tag:'comm',
     img: '/images/service-commercial.png',
     title: 'Commercial Shoots',
@@ -215,7 +261,7 @@ const services_data: ServiceDataTypes[] = [
           '40 Edited photos',
           '1 Photographer',
           '1 Videographer',
-          '4 Short Videos ( 15 secs to 1 min',
+          '4 Short Videos (15 secs to 1 min)',
           'Digital Gallery for 6 months'
         ]
       },
@@ -227,15 +273,15 @@ const services_data: ServiceDataTypes[] = [
           '50 Edited photos',
           '1 Photographer',
           '1 Videographer',
-          '8 Short Videos ( 15 secs to 1 min',
-          '1 Corporate Video (1 to 3 min',
+          '8 Short Videos (15 secs to 1 min)',
+          '1 Corporate Video (1 to 3 min)',
           'Digital Gallery for 6 months'
         ]
       }
     ]
   },
   {
-    id: 5,
+    id: 6,
     id_tag: 'custom',
     img: '/images/service-custom.png',
   },

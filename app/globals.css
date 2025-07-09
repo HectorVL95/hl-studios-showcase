@@ -31,7 +31,11 @@ body {
 .slick-track {
   display: flex;
   align-items: center;
+  gap: 40px;
 }
+
+
+
 
 .big-pic-container {
   display: flex !important;

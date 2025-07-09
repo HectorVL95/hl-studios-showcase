@@ -22,7 +22,7 @@ const SliderBigPic: React.FC<SliderBigPicProps> = ({
   const route = useRouter();
   const slider_ref = useRef<Slider | null>(null);
 
-  const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 7 || el.id === 22 || el.id === 19 || el.id === 34)
+  const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 6 || el.id === 46 || el.id === 48 || el.id === 60)
 
   const show_homepage_slider = path === '/' ? home_page_slider : portfolioPictures
 
