@@ -43,8 +43,6 @@ const Homepage = () => {
     return () => clearTimeout(timeout);
   }, [count]);
 
-  console.log(selected_image_index);
-
   return (
     <>
       <Banner text={'Lets make your story'} text_bigger="unforgettable" video />

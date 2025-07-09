@@ -16,7 +16,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
   const router = useRouter()
   const { is_mobile } = useResponsive();
 
-    const home_page_slider = portfolioPictures.filter(el => el.id === 1 || el.id === 6 || el.id === 46 || el.id === 48 || el.id === 60)
+  const slider_ids = [1, 6, 22, 24, 26, 39, 44, 46, 48, 47, 49, 54, 60, 63]
+  const home_page_slider = portfolioPictures.filter(el => slider_ids.includes(el.id));
 
   const settings = {
     dots: false,
@@ -28,7 +29,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     arrows: true,
     responsive: [
       {
-        breakpoint: 900,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -37,7 +38,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
         }
       },
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -55,20 +56,22 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
   };
 
   const handle_show_slider_big_pic = (id: number) => {
-    if (is_mobile) return;
-    set_show_slider_big_pic(true);
-    set_selected_image_index(id);
+  if (is_mobile) return;
+  const index = home_page_slider.findIndex(el => el.id === id);
+  if (index === -1) return;
+  set_selected_image_index(index);
+  set_show_slider_big_pic(true);
   }
   
   return (
     <SectionLayout>
-      <div className={`flex flex-col gap-12 ${is_mobile && 'px-4'}home-slider`}>
+      <div className={`flex flex-col gap-12 ${is_mobile && ' px-4'} home-slider`}>
         <Slider {...settings}>
         {
           home_page_slider.map(el => (
-            <div key={el.id} className="cursor-pointer hover:scale-[1.1] active:scale-[0.9] ease-in-out duration-300 px-8">
+            <div key={el.id} className="cursor-pointer hover:scale-[1.1] active:scale-[0.9] ease-in-out duration-300">
               <div
-                className="h-[300px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px] bg-cover bg-center rounded-3xl "
+                className="h-[300px] w-full sm:w-[250px] md:w-[300px] lg:w-[300px] bg-cover bg-center rounded-3xl "
                 style={{ backgroundImage: `url(${el.src})` }}
                 onClick={() => handle_show_slider_big_pic(el.id)}
               />
