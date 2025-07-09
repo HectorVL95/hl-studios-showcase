@@ -49,7 +49,9 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '0px'
         }
       }
     ]
