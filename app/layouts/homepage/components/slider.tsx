@@ -59,21 +59,23 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
     set_show_slider_big_pic(true);
     set_selected_image_index(id);
   }
-
+  
   return (
     <SectionLayout>
       <div className={`flex flex-col gap-12 ${is_mobile && 'px-4'}home-slider`}>
         <Slider {...settings}>
-        {home_page_slider.map(el => (
-          <div key={el.id} className="cursor-pointer hover:scale-[1.1] active:scale-[0.9] ease-in-out duration-300 px-8">
-            <div
-              className="h-[300px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px] bg-cover bg-center rounded-3xl "
-              style={{ backgroundImage: `url(${el.src})` }}
-              onClick={() => handle_show_slider_big_pic(el.id)}
-            />
-          </div>
-        ))}
-      </Slider>
+        {
+          home_page_slider.map(el => (
+            <div key={el.id} className="cursor-pointer hover:scale-[1.1] active:scale-[0.9] ease-in-out duration-300 px-8">
+              <div
+                className="h-[300px] w-full sm:w-[250px] md:w-[300px] lg:w-[350px] bg-cover bg-center rounded-3xl "
+                style={{ backgroundImage: `url(${el.src})` }}
+                onClick={() => handle_show_slider_big_pic(el.id)}
+              />
+            </div>
+          ))
+        }
+        </Slider>
         <div className="flex justify-center lg:justify-end">
           <Button onClick={() => { router.push('/portfolio')}}>View More</Button>
         </div>
