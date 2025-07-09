@@ -1,7 +1,7 @@
 const GallerySliderPictures = [
   {
     id: 0,
-    src: '/images/gallery-slider-couple.png',
+    src: '/images/h&l-pics/9.jpg',
     alt: "Gallery Slider Image"
   },
   {

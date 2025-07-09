@@ -30,7 +30,10 @@ body {
 
 .slick-track {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
+  margin: 20px 0;
 }
 
 .big-pic-container {
