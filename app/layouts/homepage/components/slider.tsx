@@ -15,7 +15,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ set_show_slider_big_pic, 
   const router = useRouter()
   const { is_mobile } = useResponsive();
 
-  const slider_ids = [1, 6, 22, 24, 26, 39, 44, 46, 48, 47, 49, 54, 60, 63]
+  const slider_ids = [1, 6, 49, 51, 63]
   const home_page_slider = portfolioPictures.filter(el => slider_ids.includes(el.id));
 
   const settings = {

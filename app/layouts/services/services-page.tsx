@@ -28,6 +28,7 @@ const ServicesPage = () => {
             />
           )}
         </div>
+        <p>*To book any package, an advance deposit payment of at least 25% of the total payment is required, (no refund for deposit) the rest of the payment has to be done ending the event.</p>
       </section>
     </SectionLayout>   
   );
