@@ -8,7 +8,7 @@ import MobileNav from "./layouts/mobile-nav";
 import { usePathname } from "next/navigation";
 import { useResponsive } from "./hooks/useResponsive";
 import message_sent_store from "./store/message-sent-store";
-
+//
 const RootLayout = ({
   children,
 }: Readonly<{
